@@ -33,6 +33,7 @@ import org.matsim.core.controler.AbstractModule;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy.OverwriteFileSetting;
 import org.matsim.core.events.handler.BasicEventHandler;
+import org.matsim.core.utils.io.IOUtils;
 import org.matsim.testcases.MatsimTestUtils;
 
 /**
@@ -62,7 +63,7 @@ public class PtTutorialTest {
 	
 	@Test
 	public void ensure_tutorial_runs() {
-		Config config = this.utils.loadConfig("examples/pt-tutorial/0.config.xml");
+		Config config = this.utils.loadConfig(IOUtils.newUrl(ExamplesUtils.getTestScenarioURL("pt-tutorial"), "0.config.xml"));
 		config.controler().setLastIteration(1);
 
 
